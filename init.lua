@@ -43,13 +43,11 @@ require('packer').startup(function(use)
 	use 'wellle/targets.vim'
 	use 'numToStr/Comment.nvim'
 
-	require('Comment').setup({})
 	
 	use 'tpope/vim-surround'
 
 	-- nvim.tree setup and configuration 
 	use 'kyazdani42/nvim-tree.lua'
-	require('nvim-tree').setup({})
 
 	-- Telescope doing magic
 	use 'nvim-telescope/telescope.nvim'
@@ -57,11 +55,7 @@ require('packer').startup(function(use)
 
 	--Togleterm stuff 
 	use 'akinsho/toggleterm.nvim'
-	require('toggleterm').setup({
-  open_mapping = '<C-g>',
-  direction = 'float',
-  shade_terminals = true
-})
+	
 	-- vim fugitive a git client
 	use 'tpope/vim-fugitive'
 	
@@ -90,7 +84,7 @@ vim.cmd('colorscheme onedark')
 require('lualine').setup()
 
 -- enabling vim modules
-require('nvim-treesitter.configs').setup({
+--[[ require('nvim-treesitter.configs').setup({
   highlight = {
     enable = true,
   },
@@ -117,3 +111,19 @@ require('nvim-treesitter.configs').setup({
     'c',
   },
 })
+--]]
+
+
+	require('Comment').setup({})
+
+	require('nvim-tree').setup({})
+
+	require('toggleterm').setup({
+	  open_mapping = '<C-g>',
+	  direction = 'float',
+	  shade_terminals = true
+	})
+ 
+
+
+
